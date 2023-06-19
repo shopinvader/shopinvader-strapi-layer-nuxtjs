@@ -1,73 +1,23 @@
-# Nuxt Layer Starter
+# Shopinvader Strapi Layer
 
-Create Nuxt extendable layer with this GitHub template.
+[![License][license-src]][license-href]
+[![Nuxt][nuxt-src]][nuxt-href]
 
-## Setup
+Shopinvader Strapi Layer is a [Nuxt layer](https://nuxt.com/docs/getting-started/layers) that provides a set of components to build a website with [Strapi](https://strapi.io/).
 
-Make sure to install the dependencies:
+## Features ✨
 
-```bash
-pnpm install
-```
+- **+10 Components** ready to build rich pages
+- Start from a `README`, scale to a framework documentation
+- Wildcard page to manage dynamic page content
 
-## Working on your theme
+## License
 
-Your theme is at the root of this repository, it is exactly like a regular Nuxt project, except you can publish it on NPM.
+This project is open source under the terms of the [MIT License](./LICENSE)
 
-The `.playground` directory should help you on trying your theme during development.
+<!-- Badges -->
 
-Running `pnpm dev` will prepare and boot `.playground` directory, which imports your theme itself.
-
-## Distributing your theme
-
-Your Nuxt layer is shaped exactly the same as any other Nuxt project, except you can publish it on NPM.
-
-To do so, you only have to check if `files` in `package.json` are valid, then run:
-
-```bash
-npm publish --access public
-```
-
-Once done, your users will only have to run:
-
-```bash
-npm install --save your-theme
-```
-
-Then add the dependency to their `extends` in `nuxt.config`:
-
-```ts
-defineNuxtConfig({
-  extends: 'your-theme'
-})
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-pnpm dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-pnpm build
-```
-
-Or statically generate it with:
-
-```bash
-pnpm generate
-```
-
-Locally preview production build:
-
-```bash
-pnpm preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+[nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?&logo=nuxt.js
+[nuxt-href]: https://nuxt.com
+[license-src]: https://img.shields.io/github/license/nuxt-themes/docus.svg?style=flat&colorA=002438&colorB=28CF8D
+[license-href]: https://github.com/nuxt-themes/docus/blob/main/LICENSE
