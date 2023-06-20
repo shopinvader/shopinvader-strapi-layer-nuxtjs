@@ -13,8 +13,8 @@ export default {
   },
   computed: {
     fullpath() {
-      const { strapi } = useRuntimeConfig()
-      const baseURl = strapi?.url || ''
+      const config = useRuntimeConfig()
+      const baseURl = config?.strapi?.url || config?.public?.strapi?.url  || ''
       return baseURl + this.image.url
     },
     alt() {

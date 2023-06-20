@@ -24,6 +24,6 @@ export class Page {
     }
   }
   toJSON() {
-    return {...this.data}
+    return {...this.data, className: 'Page'}
   }
 }

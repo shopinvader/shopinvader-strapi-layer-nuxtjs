@@ -1,3 +1,11 @@
 export default defineNuxtConfig({
-  extends: '..'
+  extends: '..',
+  runtimeConfig: {
+    public: {
+      strapi: {
+        url: process.env.STRAPI_URL || "",
+
+      }
+    }
+  }
 })

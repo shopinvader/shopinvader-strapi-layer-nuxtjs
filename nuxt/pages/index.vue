@@ -3,38 +3,20 @@
     <cms-dynamic-zone :dynamicZone="page?.content" />
   </div>
 </template>
-<script lang="ts" setup>
-import { Page } from "~/models/cms/Page";
-const route = useRoute();
-const slugs: string[] = (route.params.slugs as string[]) || [];
-const path: string | null = (slugs.join("/") as string) || null;
-const { data: page, error } = await useAsyncData(
-  "page",
-  async () => {
-    const { findPage } = useCMS();
-    const page: Page | null =
-      (await findPage({ filters: { handle: "home" } })) || null;
-    return page;
-  },
-  { watch: [path] }
-);
-const test = async () => {
-  console.log("test");
-  const { find } = useStrapi();
-  const a = await find("pages", "home");
-  return a;
-};
-if (page?.value) {
-  const { seo } = page.value;
-  useHead({
-    title: seo?.metaTitle || "Home",
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: seo?.metaDescription || "",
-      },
-    ],
-  });
-}
+<script lang="ts">
+export default defineComponent({
+  async setup (_props, { slots, emit }) {
+
+    const {data:page} = await useAsyncData('page', async () => {
+      const { findPage } = useCMS();
+      const page = await findPage({ filters: { handle: "home" } }) || null;
+      return page
+    })
+
+    return {
+      page
+    }
+  }
+})
+
 </script>
